@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Portal do Beneficiário</title>
+
+    <meta name="description" content="Portal do Beneficiário - 2ª via de boleto, reembolsos, carteirinha digital e suporte completo. Atendimento humanizado via WhatsApp.">
+    <meta name="theme-color" content="#1E3A8A"> 
+    <meta property="og:title" content="Portal do Beneficiário">
+    <meta property="og:description" content="Gerencie seu plano de saúde com facilidade.">
+    <meta property="og:type" content="website">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        brandBlue: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e3a8a', 
+                            900: '#172554', 
+                        },
+                        brandOrange: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            500: '#f97316',
+                            600: '#2563eb', // Agora é Azul
+                            700: '#1d4ed8',
+                            800: '#1e3a8a', // Azul Escuro
+                            900: '#172554', // Tom Azul para textos
+                        },
+                    },
+                    boxShadow: {
+                        soft: '0 16px 32px -12px rgba(0,0,0,0.1)',
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+
+<body class="bg-blue-50 text-slate-800 antialiased">
+
+<header class="fixed w-full top-0 z-40 bg-white/95 backdrop-blur-lg border-b border-blue-100 shadow-sm transition-all">
+    <div class="container mx-auto px-4 h-20 flex items-center justify-between">
+
+        <a href="#" class="flex items-center gap-2">
+            <div class="w-10 h-10 bg-brandBlue-800 rounded-lg flex items-center justify-center text-white shadow-lg">
+                T
+            </div>
+            <span class="text-2xl font-extrabold text-brandBlue-900">
+                Toledo<span class="text-brandBlue-600"> Piza</span>
+            </span>
+        </a>
+
+        <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium text-slate-600">
+            <a href="#servicos" class="hover:text-brandBlue-600 transition">Meus Serviços</a>
+            <a href="https://wa.me/5511975159362?text=%20Ol%C3%A1%20equipe." target="_blank" rel="noopener" class="hover:text-brandBlue-600 transition flex items-center gap-1">
+                Financeiro
+            </a>
+            <a href="#suporte" class="hover:text-brandBlue-600 transition">Suporte</a>
+        </nav>
+
+        <button id="menuBtn" class="lg:hidden w-10 h-10 flex items-center justify-center rounded-md hover:bg-slate-100 transition">
+            <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-brandBlue-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-width="2" d="M4 8h16M4 16h16"></path>
+            </svg>
+        </button>
+    </div>
+
+    <div id="mobileMenu" class="hidden lg:hidden px-4 pb-6 bg-white border-t border-gray-200 shadow-md">
+        <a href="#servicos" class="block py-3 text-slate-700 hover:text-brandBlue-600">Meus Serviços</a>
+        <a href="https://wa.me/5511975159362?text=%20Ol%C3%A1%20equipe." target="_blank" class="block py-3 text-slate-700 hover:text-brandBlue-600">Financeiro</a>
+        <a href="#suporte" class="block py-3 text-slate-700 hover:text-brandBlue-600">Suporte</a>
+    </div>
+</header>
+
+<script>
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuBtn.onclick = () => {
+        mobileMenu.classList.toggle("hidden");
+    };
+</script>
+
+<section class="pt-36 pb-32 bg-gradient-to-br from-white via-blue-50 to-white">
+    <div class="container mx-auto px-4 text-center"> 
+        <div class="max-w-4xl mx-auto space-y-8">
+             
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-brandBlue-200 shadow mb-4">
+                <span class="w-2 h-2 bg-brandBlue-600 rounded-full"></span>
+                <span class="text-xs font-semibold text-brandBlue-900 uppercase">Área Exclusiva Beneficiário</span>
+            </div>
+
+            <h1 class="text-5xl lg:text-7xl font-extrabold leading-tight text-brandBlue-900">
+                Bem-vindo ao seu <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-brandBlue-600 to-brandBlue-800">Toledo Piza</span>
+            </h1>
+
+            <p class="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+                Emissão de boletos, Quitação contratual, reembolsos e suporte. <br>
+                Tudo o que você precisa em um ambiente rápido, seguro e intuitivo.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+                <a href="https://wa.me/5511975159362?text=%20Ol%C3%A1%20equipe." target="_blank" class="bg-brandBlue-600 text-white px-10 py-4 rounded-full font-bold shadow-lg hover:bg-brandBlue-700 hover:shadow-xl transition transform hover:-translate-y-1">
+                    Acessar Serviços
+                </a>
+
+                <a href="#suporte" class="bg-white border-2 border-brandBlue-100 text-brandBlue-900 px-10 py-4 rounded-full font-bold hover:border-brandBlue-500 hover:text-brandBlue-600 transition">
+                    Preciso de Ajuda
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="servicos" class="relative z-20 -mt-16 mb-24">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+            <div class="bg-white rounded-xl shadow-soft p-8 flex items-center gap-5 border-t-4 border-brandBlue-600 
+                        hover:-translate-y-1 hover:shadow-lg transition cursor-pointer group">
+                <div class="w-12 h-12 rounded-lg border border-brandBlue-100 bg-brandBlue-50 
+                            flex items-center justify-center text-brandBlue-600 group-hover:bg-brandBlue-600 
+                            group-hover:text-white transition">
+                    📄
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-brandBlue-900">2ª Via de boleto</h3>
+                    <p class="text-sm text-slate-500 mt-1 leading-tight">Acesse fatura seus boletos rapidamente.</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-soft p-8 flex items-center gap-5 border-t-4 border-brandBlue-600 
+                        hover:-translate-y-1 hover:shadow-lg transition cursor-pointer group">
+                <div class="w-12 h-12 rounded-lg border border-brandBlue-100 bg-brandBlue-50 
+                            flex items-center justify-center text-brandBlue-600 group-hover:bg-brandBlue-600 
+                            group-hover:text-white transition">
+                    
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-brandBlue-900">Quitação contratual</h3>
+                    <p class="text-sm text-slate-500 mt-1 leading-tight">Sua identificação digital.</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-soft p-8 flex items-center gap-5 border-t-4 border-brandBlue-600
+                        hover:-translate-y-1 hover:shadow-lg transition cursor-pointer group">
+                <div class="w-12 h-12 rounded-lg border border-brandBlue-100 bg-brandBlue-50 
+                            flex items-center justify-center text-brandBlue-600 group-hover:bg-brandBlue-600 
+                            group-hover:text-white transition">
+                    💰
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-brandBlue-900">Solicitar Parcelas em Atraso </h3>
+                    <p class="text-sm text-slate-500 mt-1 leading-tight">Envie e acompanhe solicitações.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="suporte" class="py-24 bg-gradient-to-br from-brandBlue-600 to-brandBlue-800 relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-64 h-64 bg-white rounded-full blur-3xl opacity-10 -translate-y-1/2 translate-x-1/2"></div>
+    <div class="absolute bottom-0 left-0 w-80 h-80 bg-brandBlue-900 rounded-full blur-3xl opacity-30 translate-y-1/2 -translate-x-1/4"></div>
+
+    <div class="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between gap-16 relative z-10">
+
+        <div class="w-full lg:w-1/2 text-white space-y-8">
+            <h2 class="text-3xl md:text-4xl font-extrabold leading-tight">
+                Ainda com dúvidas? <br>
+                <span class="text-blue-200">Fale com nosso time.</span>
+            </h2>
+
+            <p class="text-blue-50 text-lg max-w-md leading-relaxed">
+                Nossa equipe está pronta para te atender via WhatsApp com rapidez e qualidade.
+            </p>
+
+            <div class="flex items-center gap-4 p-4 bg-brandBlue-800/30 rounded-xl border border-white/20">
+                <div>
+                    <p class="text-white font-semibold text-sm">Atendimento Humanizado</p>
+                    <p class="text-blue-200 text-xs">Segunda a Sexta, 08h às 22h</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full lg:w-1/2 max-w-md bg-white p-8 rounded-2xl shadow-xl text-center space-y-6">
+            <div class="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mx-auto text-2xl">
+                💬
+            </div>
+
+            <h3 class="text-xl font-bold text-slate-900">Canal de Atendimento</h3>
+            <p class="text-slate-500 text-sm">Clique abaixo para iniciar a conversa.</p>
+
+            <a href="https://wa.me/5511975159362?text=%20Ol%C3%A1%20equipe." target="_blank" rel="noopener" class="block w-full bg-[#25D366] text-white px-6 py-3.5 rounded-lg font-bold shadow-md 
+                      hover:bg-[#1ebe5f] hover:shadow-lg transition">
+                Iniciar WhatsApp
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<footer class="bg-slate-900 text-slate-300 py-12 border-t border-slate-800">
+    <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-10 text-sm">
+
+        <div class="col-span-1 md:col-span-2 space-y-4">
+            <span class="text-xl font-extrabold text-white">
+                Toledo <span class="text-brandBlue-500">Piza</span>
+            </span>
+
+            <p class="max-w-sm leading-relaxed text-sm">
+                Sua central de relacionamento. Gestão simples e transparente.
+            </p>
+
+            <div class="text-slate-500 text-xs space-y-1 pt-4">
+                
+                <p>Central de Atendimento Toledo Piza.</p>
+            </div>
+        </div>
+
+        <div class="space-y-3">
+            <h4 class="font-bold text-white">Navegação</h4>
+            <ul class="space-y-2">
+                <li><a href="#" class="hover:text-brandBlue-500 transition">Início</a></li>
+                <li><a href="#servicos" class="hover:text-brandBlue-500 transition">Serviços</a></li>
+                <li><a href="politica.html" class="hover:text-brandBlue-500 transition">Privacidade</a></li>
+            </ul>
+        </div>
+
+        <div class="space-y-3">
+            <h4 class="font-bold text-white">Contatos</h4>
+            <div class="space-y-2 text-slate-400">
+                <a href="tel:5511975159362" class="hover:text-white transition">5511975159362</a>
+                <p>Contato@portaljvm.com</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container mx-auto px-4 mt-10 pt-6 border-t border-slate-800 text-center text-slate-500 text-xs">
+        © 2026 — Todos os direitos reservados.
+    </div>
+</footer>
+<a href="https://wa.me/5511975159362?text=%20Ol%C3%A1%20equipe." target="_blank" style="
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #25D366;
+        color: white;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+        text-decoration: none;
+        font-size: 30px;
+    ">
+        📞
+    </a>
+
+<div id="cookie-banner" class="fixed bottom-4 left-4 right-4 md:right-4 md:max-w-md bg-white shadow-lg border 
+            border-gray-200 p-5 rounded-xl z-50 flex flex-col gap-4 hidden">
+
+    <div class="flex items-start gap-3">
+        <span class="text-2xl">🍪</span>
+        <div>
+            <h4 class="font-bold text-slate-900 text-sm">Cookies e Privacidade</h4>
+            <p class="text-xs text-slate-500 mt-1">
+                Usamos cookies para melhorar sua experiência. Ao continuar, você concorda com nossa política.
+            </p>
+        </div>
+    </div>
+
+    <div class="flex gap-2 justify-end">
+        <button id="cookie-close" class="text-xs font-medium text-slate-500 px-4 py-2 hover:bg-gray-50 rounded-lg">
+            Fechar
+        </button>
+
+        <button id="cookie-accept" class="text-xs font-bold text-white bg-brandBlue-600 px-5 py-2 rounded-lg hover:bg-brandBlue-700">
+            Concordar
+        </button>
+    </div>
+</div>
+
+<script>
+    const banner = document.getElementById("cookie-banner");
+
+    if (!localStorage.getItem("cookiesAccepted")) {
+        banner.classList.remove("hidden");
+    }
+
+    document.getElementById("cookie-accept").onclick = () => {
+        localStorage.setItem("cookiesAccepted", "true");
+        banner.classList.add("hidden");
+    };
+
+    document.getElementById("cookie-close").onclick = () => {
+        banner.classList.add("hidden");
+    };
+</script>
+
+</body>
+</html>
